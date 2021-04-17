@@ -17,7 +17,7 @@ openStream()
     playStream("localStream", stream);
   });
 
-const peer = new Peer({ host: '192.168.1.10', secure: true, port: 3001 });
+const peer = new Peer({ host: '3.143.210.184', secure: true, port: 443 });
 
 peer.on('open', id => {
   document.getElementById('my-peer').innerHTML += " " + id;

@@ -1,19 +1,19 @@
 const express = require("express")
 const app = express()
 
-var https = require("https");
+var http = require("http");
 
 var fs = require("fs");
-let options = {
-  key: fs.readFileSync('./ssl/key.pem', 'utf8'),
-  cert: fs.readFileSync('./ssl/server.crt', 'utf8')
-}
-let server = https.createServer(options, app).listen(1345, () => {
-  console.log("CentraliZr listening at port 1345");
-})
-// let server = http.createServer(app).listen(3000, () => {
-//   console.log("3000 is running")
-// })
+//let options = {
+  //key: fs.readFileSync('./ssl/key.pem', 'utf8'),
+  //cert: fs.readFileSync('./ssl/server.crt', 'utf8')
+//}
+//let server = https.createServer(options, app).listen(443, () => {
+  //console.log("CentraliZr listening at port 443");
+//})
+ let server = http.createServer(app).listen(80, () => {
+   console.log("3000 is running")
+ })
 
 const io = require("socket.io")(server)
 const { v4: uuidV4 } = require("uuid")
